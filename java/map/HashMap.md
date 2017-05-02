@@ -2,7 +2,7 @@
 
 HashMap是基于哈希表的map实现，以键值对的形式存在
 
-### 数据结构
+## 数据结构
 HashMap 数组+链表+红黑树（JDK1.8增加了红黑树部分）。
 ```
 Node<K,V>[] table：存储数据的数组
@@ -15,14 +15,14 @@ Node<K,V>[] table：存储数据的数组
 索引计算：数组长度-1 & 对key值进行hash算法后得到的值
 当数据发生hash碰撞时会在当前节点上往后挂新的数据（e.next=newNode）,当链表数据大于8（默认大小）时采用红黑树代替链表
 
-构造函数：
+## 构造函数：
 
 	public HashMap(int initialCapacity, float loadFactor)
 	initialCapacity：初始容量（默认16，最大1<<30）
 	loadFactor：加载因子（默认0.75f）
 
-函数：
-	1、hash
+## 函数：
+### 1、hash
 	
 		static final int hash(Object key) {
 	        int h;
@@ -33,7 +33,7 @@ Node<K,V>[] table：存储数据的数组
 	    对于null值返回值为0，
 	    高位运算的算法：h ^ (h >>> 16) 高16位与底16位进行亦或运算
 	    这么做可以在数组table的length比较小的时候，也能保证考虑到高低Bit都参与到Hash的计算中，同时不会有太大的开销。
-	2、put
+### 2、put
 	
 	    public V put(K key, V value) {
 			//对key的hashCode做hash操作
@@ -90,7 +90,7 @@ Node<K,V>[] table：存储数据的数组
 	        afterNodeInsertion(evict);
 	        return null;
 	    }
-	3、resize（扩容）
+### 3、resize（扩容）
 	
 		final Node<K,V>[] resize() {
 	        Node<K,V>[] oldTab = table;
@@ -176,6 +176,6 @@ Node<K,V>[] table：存储数据的数组
 	        }
 	        return newTab;
 	    }
-	4、keySet/valueSet
+### 4、keySet/valueSet
 		通过暴露HashMap的内部类KeySet并重写iterator方法，该方法返回一个自定义的Iterator对象KeyIterator（同样为HashMap的内部类），
 		并重写Iterator中的方法直接访问HashMap中的table实现数据的可见性
