@@ -2,7 +2,7 @@
 
 ## ConcurrentHashMap：数组+链表+红黑树（JDK1.8增加了红黑树部分）
 
-### 通过Node进行节点划分实现分段锁，在进行写时采用synchronized对节点进行加锁
+### 通过Node进行节点划分实现分段锁，在进行写操作时采用synchronized对节点进行加锁
 ### 索引计算：数组长度-1 & 对key值进行hash算法后得到的值
 
 	private transient volatile int sizeCtl;
