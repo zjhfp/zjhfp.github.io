@@ -35,7 +35,7 @@ Node<K,V>[] table：存储数据的数组
 	    这么做可以在数组table的length比较小的时候，也能保证考虑到高低Bit都参与到Hash的计算中，同时不会有太大的开销。
 	2、put
 	
-		public V put(K key, V value) {
+	    public V put(K key, V value) {
 			//对key的hashCode做hash操作
 	        return putVal(hash(key), key, value, false, true);
 	    }
