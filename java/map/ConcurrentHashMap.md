@@ -2,8 +2,9 @@
 
 ## ConcurrentHashMap：数组+链表+红黑树（JDK1.8增加了红黑树部分）
 
-通过Node进行节点划分实现分段锁，在进行写时采用synchronized对节点进行加锁
-索引计算：数组长度-1 & 对key值进行hash算法后得到的值
+### 通过Node进行节点划分实现分段锁，在进行写时采用synchronized对节点进行加锁
+### 索引计算：数组长度-1 & 对key值进行hash算法后得到的值
+
 	private transient volatile int sizeCtl;
 		-1代表正在初始化
 		-N 表示有N-1个线程正在进行扩容操作
@@ -14,7 +15,7 @@
 
 	size值是一个估值，并非准确的真实值
 
-	确保原子性操作的三个函数
+### 确保原子性操作的三个函数
 	// ASHIFT、ABASE为常量
 	// 向table上put数据，使用Volatile语义确保数据在修改后能被其他线程获取
 	static final <K,V> void setTabAt(Node<K,V>[] tab, int i, Node<K,V> v) {
