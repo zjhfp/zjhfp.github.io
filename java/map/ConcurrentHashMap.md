@@ -9,7 +9,7 @@
 		-N 表示有N-1个线程正在进行扩容操作
 		0代表hash表还没有被初始化
 	static final int MOVED     = -1; // hash值是-1，表示这是一个forwardNode节点
-    static final int TREEBIN   = -2; // hash值是-2  表示这时一个TreeBin节点
+    	static final int TREEBIN   = -2; // hash值是-2  表示这时一个TreeBin节点
 	使用treeBin包装treeNode实现红黑树的操作
 
 	size值是一个估值，并非准确的真实值
