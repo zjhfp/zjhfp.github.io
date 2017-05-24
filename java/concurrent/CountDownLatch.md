@@ -1,7 +1,8 @@
-##CountDownLatch是一个同步工具类，它允许一个或多个线程一直等待，直到其他线程的操作执行完后再执行
 
-public class CountDownLatchDemo {  
-    
+###CountDownLatch是一个同步工具类，它允许一个或多个线程一直等待，直到其他线程的操作执行完后再执行
+
+```
+public class CountDownLatchDemo {      
     public static void main(String[] args) throws InterruptedException {  
         //构造器中的计数值（count）实际上就是闭锁需要等待的线程数量。
         //这个值只能被设置一次，而且CountDownLatch没有提供任何机制去重新设置这个计数值。
