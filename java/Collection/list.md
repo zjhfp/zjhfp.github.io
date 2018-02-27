@@ -1,5 +1,5 @@
 ### 1、AarrayList
-	数据结构：数组
+	数据结构：数组(随机插入慢，随机读取快)
 	非线程安全（Vector线程安全：函数使用synchronized加锁）
 	通过System.arraycopy的方式进行扩容和列表数据移除、指定位置添加数据等操作
 	当使用Iterator进行列表遍历操作期间如果修改了列表会抛出ConcurrentCodificationException
@@ -15,7 +15,7 @@
 	增加了push（往数组最后添加数据）、pop（弹出最后一个数据）、peek（返回最后一个数据）
 
 ### 3、LinkedList
-	链表Node（item,prev,next），先进先出
+	链表Node（item,prev,next），先进先出（随机插入块，随机读取慢）
 	非线程安全
 
 ### 4、CopyOnWwriteArrayList
